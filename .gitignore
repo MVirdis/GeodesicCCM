@@ -1,0 +1,25 @@
+# Ignore MATLAB backup and autosave files
+*.asv
+*.autosave
+
+# Ignore MATLAB cache and preference files
+*.m~        # Backup files
+*.bak       # General backup files
+*.log       # Log files (e.g., diary logs)
+*.mdl.*     # Simulink autosave/backup files
+*.slxc      # Simulink compiled files
+*.slprj/    # Simulink project generated code and cache
+*.mex*      # Compiled MEX files
+*.p         # Protected (compiled) MATLAB files
+
+# Ignore MATLAB code analysis and cache
+.mltbxpackaging/   # MATLAB toolbox packaging folder
+.project/          # Project definition files
+.simulink/         # Simulink temporary files
+
+# Ignore general hidden and system files
+.DS_Store
+Thumbs.db
+
+# Ignore MATLAB Code Analyzer cache
+.codeAnalyzer/
