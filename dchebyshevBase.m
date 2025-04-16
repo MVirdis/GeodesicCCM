@@ -1,3 +1,9 @@
+% Filename: dchebyshevBase.m
+% Author: Mario Virdis
+% Created: 2025-04-16
+% Description: See function header.
+% Version: 1.0
+
 function ys = dchebyshevBase(degs, xs)
 %DCHEBYSHEVBASE(degs, xs) Returns the derivative of a chebyshev polynomial
 %(first type) base.

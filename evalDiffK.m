@@ -1,3 +1,9 @@
+% Filename: evalDiffK.m
+% Author: Mario Virdis
+% Created: 2025-04-16
+% Description: See function header.
+% Version: 1.0
+
 function [u,us_,pnts] = evalDiffK(config, c, dK, use_cpnts, Neval)
 %EVALDIFFK evaluates a differential controller along a path.
 

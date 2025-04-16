@@ -1,3 +1,9 @@
+% Filename: Kccm.m
+% Author: Mario Virdis
+% Created: 2025-04-16
+% Description: See function header.
+% Version: 1.0
+
 function u = Kccm(config, dK, xeq,x,xk)
 
 u = {0,xk};

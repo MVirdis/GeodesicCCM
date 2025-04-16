@@ -1,3 +1,9 @@
+% Filename: ingredientsCCQ.m
+% Author: Mario Virdis
+% Created: 2025-04-16
+% Description: See function header.
+% Version: 1.0
+
 function [cpnts, weights] = ingredientsCCQ(a,b,num)
 %INGREDIENTSCCQ(a,b,num) returns collocation points and weights for the
 %Clenshaw–Curtis quadrature scheme.

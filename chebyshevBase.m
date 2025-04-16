@@ -1,3 +1,9 @@
+% Filename: chebyshevBase.m
+% Author: Mario Virdis
+% Created: 2025-04-16
+% Description: See function header.
+% Version: 1.0
+
 function ys = chebyshevBase(degs, xs)
 %CHEBYSHEVBASE(degs, xs) Returns a chebyshev polynomial (first type) base.
 %   Inputs: degs => an array of integers listing all the degrees of the
