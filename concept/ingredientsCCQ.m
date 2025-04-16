@@ -25,6 +25,7 @@ weights = k1*weights;
 end
 
 function w = weightsCCQ(N)
+%Code edited from the accompanying code to arXiv:1607.04340v2 by K. Leung
     w = zeros(1,N+1);
     if even(N)
         w(1) = 1/(N^2 - 1);
