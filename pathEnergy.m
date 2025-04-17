@@ -69,12 +69,12 @@ for k=1:num_cpnts
     Es(1,k) = dgamma_k'*M_k*dgamma_k;
 
     if dEf || dEsf % - avoids to compute gradient info if not requested
-        dW_k = dW(gamma_k); % {nx,nx} - the value of the inverse metric derivative at the current state
         for i=1:nx
+            dW_ki = dW(gamma_k,i); % {nx,nx} - the value of the inverse metric derivative at the current state
             for j=1:N+1
                 % Compute dE/dc_ij
                 dEs_1 = 2*dgamma_k'*M_k(:,i)*dbasis(j); % {1,1}
-                dEs_2 = -dgamma_k'*M_k*dW_k*M_k*dgamma_k*basis(j); % {1,1}
+                dEs_2 = -dgamma_k'*M_k*dW_ki*M_k*dgamma_k*basis(j); % {1,1}
                 dEs(i,j,k) = dEs_1 + dEs_2;
                 dEsw(i,j,k) = (dEs_1 + dEs_2)*w(k);
             end
