@@ -10,7 +10,8 @@ function [E,dE] = optimWrap(config, c, grad)
 if grad
     dataout = pathEnergy(config, c);
     E = dataout.E;
-    dE = dataout.dE;
+    dE_T = dataout.dE';
+    dE = dE_T(:);
 else
     dataout = pathEnergy(config, c, {'E'});
     E = dataout.E;
