@@ -4,11 +4,12 @@ function c = geodesicFind(config,xeq,x,c0)
 params = geodesicParams(config, xeq, x);
 
 c0_ = params.c0;
-if nargin == 4
-    c0_ = c0;
-end
 
 if config.N > 1 % - Only optimize if the polynomials are at least quadratic
+    if nargin == 4
+        c0_ = c0;
+        assert(all(params.Aeq*c0_-params.beq == 0), 'Initial geodesic guess must be feasible');
+    end
     opts = optimoptions('fmincon','Algorithm','sqp',...
                         'Display','off', ...
                         'MaxFunctionEvaluations',1e6);
