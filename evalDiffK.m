@@ -25,7 +25,7 @@ if nargin == 3 || (nargin >= 4 && use_cpnts) % - reuse collocation points from t
 elseif nargin == 5 % - re-approximate the integral with new collocation points
     us = zeros(1,Neval);
     [epnts, eweights] = ingredientsCCQ(0,1,Neval);
-    [xs, dxs] = evalPath(config,c,epnts);
+    [xs, dxs] = evalPath(config,c,epnts,true);
     for i=1:Neval
         xi = xs(:,i);
         us(1,i) = dK(xi)*dxs(:,i);
