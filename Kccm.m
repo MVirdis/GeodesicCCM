@@ -9,29 +9,15 @@ function u = Kccm(config, dK, xeq,x,xk)
 u = {0,xk};
 
 % Find geodesic
-params = geodesicParams(config, xeq, x);
-opts = optimoptions('fmincon','Algorithm','sqp',...
-                    'Display','off', ...
-                    'MaxFunctionEvaluations',1e6);
-[copt,~,flag] = fmincon(params.f, xk, [], [], ...
-                        params.Aeq, params.beq, [], [], [], opts);
-
-% 1  First order optimality conditions satisfied.
-% 0  Too many function evaluations or iterations.
-% -1  Stopped by output/plot function.
-% -2  No feasible point found.
-switch(flag)
-    case 1
-        % Evaluate along geodesic
-        u_ = evalDiffK(config,copt,dK);
-        u = {u_, copt};
-    case 0
-        error('Too many function evaluations or iterations.');
-    case -1
-        error('Stopped by output/plot function.');
-    case -2
-        error('No feasible point found.');
+if config.N > 1
+    copt = geodesicFind(config,xeq,x,xk);
+else
+    copt = geodesicFind(config,xeq,x);
 end
+
+% Evaluate along geodesic
+u_ = evalDiffK(config,copt,dK);
+u = {u_, copt};
 
 end
 
